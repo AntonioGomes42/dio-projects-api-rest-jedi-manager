@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"
+          rel="stylesheet" type="text/css"/>
+    <meta charset="UTF-8">
+    <title>Jedis</title>
+</head>
+<body>
+
+<div class="container">
+    <h1>New Jedi</h1>
+
+    <form class="form-group" th:action="@{/jedi}" th:object="${jedi}" method="post">
+        <input class="form-control" type="text" name="name"     th:field="*{name}" th:placeholder="Name" required oninvalid="this.setCustomValidity('Insira um nome aqui.')"
+               oninput="this.setCustomValidity('')"/> <br/>
+        <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</span>
+        <br/>
+
+        <input class="form-control" type="text" name="lastName" th:field="*{lastName}" th:placeholder="LastName" required oninvalid="this.setCustomValidity('Insira um sobrenome aqui.')"
+               oninput="this.setCustomValidity('')"/> <br/>
+        <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">LastName Error</span>
+        <br/>
+        <button class="btn btn-success" type="submit">Create a new Jedi</button>
+    </form>
+
+    <br>
+
+    <a class="btn btn-primary" th:href="@{/jedi}">Jedi</a>
+</div>
+
+</body>
+</html>
