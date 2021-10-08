@@ -1,4 +1,6 @@
-# O que é Spring
+# Este projeto é uma aplicação que segue os padrões de arquitetura REST, com o intuito de conhecer o Spring web MVC.
+
+## Abaixo temos definições das tecnologias usadas nesse projeto
 
 ## Spring Framework
 
